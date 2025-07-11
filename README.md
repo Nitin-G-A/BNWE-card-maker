@@ -34,13 +34,6 @@
 
 ---
 
-## 📸 Sample Screenshots
-
-| Login Page | Card Generator | Photo Upload |
-|------------|----------------|--------------|
-| ![Login](https://via.placeholder.com/200x100?text=Login+Page) | ![Card](https://via.placeholder.com/200x100?text=Card+Maker) | ![Upload](https://via.placeholder.com/200x100?text=Photo+Upload) |
-
----
 
 ## 🔑 How to Use
 
