@@ -56,10 +56,15 @@
 ## 📂 File Structure
 
 ├── index.html # Main frontend (login + card maker)
+
 ├── about.html # About Us page
+
 ├── contact.html # Contact form page
+
 ├── style2.css # Custom styles
+
 ├── script.js # JavaScript functionality
+
 └── README.md # Project documentation
 
 ---
