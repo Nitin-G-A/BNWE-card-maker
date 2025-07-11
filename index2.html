@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BNWE Card Maker</title>
+  <link rel="stylesheet" href="style2.css"/>
+</head>
+<body>
+
+  <!-- LOGIN PAGE -->
+  <div id="loginPage" class="login-container">
+    <h2>Login to BNWE Card</h2>
+    <form id="loginForm">
+      <input type="email" placeholder="Email" required>
+      <input type="password" placeholder="Password" required>
+      <button type="button" onclick="authenticateUser()">Login</button>
+      <p><a href="#">Forgot Password?</a></p>
+      <p>New here? <a href="#" onclick="toggleSignup()">Sign up</a></p>
+    </form>
+    <button class="google-login">Login with Google</button>
+  </div>
+
+  <!-- SIGNUP PAGE -->
+  <div id="signupPage" class="login-container" style="display: none;">
+    <h2>Create Your Account</h2>
+    <form id="signupForm">
+      <input type="text" id="signupName" placeholder="Full Name" required>
+      <input type="email" id="signupEmail" placeholder="Email" required>
+      <input type="password" id="signupPassword" placeholder="Password" required>
+      <button type="button" onclick="registerUser()">Sign Up</button>
+      <p>Already have an account? <a href="#" onclick="toggleLogin()">Login</a></p>
+    </form>
+  </div>
+
+  <!-- CARD GENERATOR SECTION -->
+  <div id="mainContent" class="container" style="display: none;">
+    <h1>BNWE Card Maker</h1>
+    <form id="cardForm">
+      <label for="eventType">Select Event:</label>
+      <select id="eventType" onchange="updateFormFields()">
+        <option value="birthday">Birthday</option>
+        <option value="wedding">Wedding</option>
+        <option value="naming">Naming Ceremony</option>
+        <option value="event">Event</option>
+      </select>
+
+      <div id="singleNameField">
+        <label for="name">Enter Name:</label>
+        <input type="text" id="name" placeholder="Enter name">
+      </div>
+
+      <div id="weddingNames" style="display: none;">
+        <label for="husband">Husband's Name:</label>
+        <input type="text" id="husband" placeholder="Enter husband's name">
+        <label for="wife">Wife's Name:</label>
+        <input type="text" id="wife" placeholder="Enter wife's name">
+      </div>
+
+      <label for="message">Custom Message:</label>
+      <textarea id="message" placeholder="Enter a message"></textarea>
+
+      <button type="button" onclick="generateCard()">Generate Card</button>
+    </form>
+
+    <div id="cardPreview">
+      <h2>Card Preview</h2>
+      <div class="card" id="generatedCard">
+        <p id="cardText">Your card will appear here...</p>
+      </div>
+      <button id="downloadBtn">Download</button>
+      <button id="whatsappShareBtn">Share on WhatsApp</button>
+    </div>
+  </div>
+
+  <!-- PHOTO UPLOAD SECTION -->
+  <div class="section-divider"></div>
+  <div id="photoUpload" class="container" style="display: none;">
+    <h2>Upload Event Photos</h2>
+    <input type="file" id="photoInput" accept="image/*" multiple>
+    <button onclick="uploadPhotos()">Upload</button>
+  </div>
+
+  <!-- EVENT CODE ALBUM ACCESS -->
+  <div class="container" id="eventCodeSection">
+    <h2>Access Event Album</h2>
+    <input type="text" id="eventCodeInput" placeholder="Enter event code (e.g. wedding123)">
+    <input type="password" id="eventPasswordInput" placeholder="Enter album password">
+    <button onclick="loadAlbum()">View Photos</button>
+    <div id="codeAlbumGallery" class="gallery"></div>
+  </div>
+
+  <!-- PHOTO GALLERY DISPLAY -->
+  <div class="section-divider"></div>
+  <div id="photoAlbum" class="container" style="display: none;">
+    <h2>Event Photos</h2>
+    <div id="photoGallery"></div>
+  </div>
+
+  <!-- PHOTOGRAPHER LOGIN -->
+  <div class="section-divider"></div>
+  <div class="container" id="photographerLoginPage">
+    <h2>Photographer Login</h2>
+    <form id="photographerLoginForm">
+      <input type="text" id="photographerUsername" placeholder="Username" required>
+      <input type="password" id="photographerPassword" placeholder="Password" required>
+      <button type="button" onclick="photographerLogin()">Login</button>
+    </form>
+  </div>
+
+  <!-- PHOTOGRAPHER PHOTO UPLOAD -->
+  <div class="container" id="photoUploadPage" style="display: none;">
+    <h2>Upload Event Photos</h2>
+    <input type="text" id="uploadEventCode" placeholder="Enter Event Code">
+    <input type="password" id="uploadEventPassword" placeholder="Set Password">
+    <input type="file" id="uploadPhotos" multiple accept="image/*">
+    <button onclick="uploadEventPhotos()">Upload Photos</button>
+    <p id="uploadStatus"></p>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-content">
+      <p>© 2025 BNWE Card Maker. All rights reserved.</p>
+      <p>
+        <a href="about.html">About</a> |
+        <a href="contact.html">Contact</a> |
+        <a href="#">Privacy</a> |
+        <a href="#">Terms</a>
+      </p>
+      <div class="social-icons">
+        <a href="#"><img src="https://img.icons8.com/ios-filled/20/ffffff/instagram-new.png"/></a>
+        <a href="#"><img src="https://img.icons8.com/ios-filled/20/ffffff/whatsapp.png"/></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS Libraries -->
+  <script src="script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</body>
+</html>

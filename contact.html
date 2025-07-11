@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Us - BNWE Card Maker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+
+    <div class="container contact-page">
+        <h1>Contact Us</h1>
+        <p>If you have any questions, feedback, or collaboration ideas, feel free to reach out to us using the form below.</p>
+
+        <form id="contactForm">
+            <input type="text" id="contactName" placeholder="Your Full Name" required>
+            <input type="email" id="contactEmail" placeholder="Your Email Address" required>
+            <input type="text" id="contactSubject" placeholder="Subject" required>
+            <textarea id="contactMessage" rows="5" placeholder="Your Message" required></textarea>
+            <button type="button" onclick="submitContactForm()">Send</button>
+            <p id="contactStatus"></p>
+        </form>
+
+        <br>
+        <a href="index.html" class="download-btn">← Back to Home</a>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>© 2025 BNWE Card Maker. All rights reserved.</p>
+            <p>
+                <a href="about.html">About</a> | 
+                <a href="index.html">Home</a> | 
+                <a href="#">Privacy</a> | 
+                <a href="#">Terms</a>
+            </p>
+            <div class="social-icons">
+                <a href="#"><img src="https://img.icons8.com/ios-filled/20/ffffff/instagram-new.png"/></a>
+                <a href="#"><img src="https://img.icons8.com/ios-filled/20/ffffff/whatsapp.png"/></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
